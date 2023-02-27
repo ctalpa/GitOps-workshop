@@ -6,3 +6,5 @@ resources:
   - mysql-storage.yml  
   - mysql-service.yml
   - mysql-deployment.yml
+#  - store-deployment.yml 
+#  - store-service.yml
