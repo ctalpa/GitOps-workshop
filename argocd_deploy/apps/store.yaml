@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: storebeg
+  namespace: argocd
+  
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ctalpa/GitOps-workshop.git # REPLACE ME!
+    targetRevision: HEAD
+    path: app_storebeg
+    kustomize:
+      version: v4.5.3
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: storebeg
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
