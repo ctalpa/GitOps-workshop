@@ -49,4 +49,4 @@ spec:
           name: init-db-store
           items:
           - key: "store.sql"
-            path: "db/store.sql"
+            path: "./db/store.sql"
