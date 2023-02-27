@@ -9,7 +9,7 @@ resources:
 - apps/argocd.yaml # Edit the file before applying!
 - apps/kube_prometheus_stack.yaml # Edit the file before applying!
 - apps/mysql.yaml
-- apps/store.yaml
+#- apps/store.yaml
 
 patchesStrategicMerge:
 - overlays/argocd-cm.yaml
