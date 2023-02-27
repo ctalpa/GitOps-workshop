@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: store-beg
-        image: registry.{{ domain }}/library/store:v1.0  
+        image: store:v1.0  
         ports:
         - containerPort: 80
