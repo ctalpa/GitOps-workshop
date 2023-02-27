@@ -38,7 +38,7 @@ spec:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
         - name: init-db
-          mountPath: /docker-entrypoint-initdb.d/store.sql
+          mountPath: /docker-entrypoint-initdb.d
 
       volumes:
       - name: mysql-persistent-storage
@@ -49,4 +49,4 @@ spec:
           name: init-db-store
           items:
           - key: "store.sql"
-            path: "./db/store.sql"
+            path: "store.sql"
