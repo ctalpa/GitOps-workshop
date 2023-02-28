@@ -47,4 +47,4 @@ spec:
           claimName: mysql-pv-claim
       - name: init-db
         configMap:
-         path: mysql-initdb-cfgmap
+         name: mysql-initdb-cfgmap
