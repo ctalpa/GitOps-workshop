@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-beg-deployment
+  labels:
+    app: store-beg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: store-beg
+  template:
+    metadata:
+      labels:
+        app: store-beg
+    spec:
+      containers:
+      - name: store-beg
+        image: localhost:5000/store:v1.0  
+        ports:
+        - containerPort: 80

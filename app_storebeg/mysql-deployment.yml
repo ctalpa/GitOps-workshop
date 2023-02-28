@@ -38,7 +38,8 @@ spec:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
         - name: init-db
-          mountPath: /docker-entrypoint-initdb.d
+          mountPath: /docker-entrypoint-initdb.d/store.sql
+          subPath: mysql-initdb-cfgmap
 
       volumes:
       - name: mysql-persistent-storage
@@ -46,7 +47,4 @@ spec:
           claimName: mysql-pv-claim
       - name: init-db
         configMap:
-          name: init-db
-          items:
-          - key: "store.sql"
-            path: "store.sql"
+         name: mysql-initdb-cfgmap
