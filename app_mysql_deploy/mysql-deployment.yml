@@ -39,11 +39,12 @@ spec:
           mountPath: /var/lib/mysql
         - name: init-db
           mountPath: /docker-entrypoint-initdb.d/store.sql
+          subPath: mysql-initdb-cfgmap
 
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
       - name: init-db
-        hostPath:
-         path: store.sql
+        configMap:
+         path: mysql-initdb-cfgmap
