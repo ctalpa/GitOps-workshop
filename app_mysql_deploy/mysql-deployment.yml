@@ -44,6 +44,6 @@ spec:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
-      -name: init-db
-       hostPath:
-        path: store.sql
+      - name: init-db
+        hostPath:
+         path: store.sql
